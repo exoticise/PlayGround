@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#07141b" />
+  <title>GOALBOUND — Stadium Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="pitch" aria-label="3D soccer penalty game"></canvas>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Goalbound home"><span class="brand-mark">G</span><span>GOALBOUND<small>STADIUM STORIES</small></span></a>
+      <div class="top-actions">
+        <div class="wallet"><span class="coin">✦</span><span id="coins">250</span></div>
+        <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button>
+        <button class="icon-btn" id="shopBtn" aria-label="Open shop">▦</button>
+      </div>
+    </header>
+    <section class="match-card">
+      <div class="eyebrow"><i></i> PENALTY PRACTICE <span class="live-tag">LIVE</span></div>
+      <h1>Own the <em>moment.</em></h1>
+      <p>One shot. One keeper. Make it count.</p>
+      <div class="match-stats"><div><b id="goalCount">0</b><span>GOALS</span></div><div class="stat-line"></div><div><b id="streak">0</b><span>STREAK</span></div><div class="stat-line"></div><div><b>∞</b><span>TIME</span></div></div>
+    </section>
+    <div class="target-reticle" id="reticle"><span></span></div>
+    <div class="trajectory-hint" id="trajectoryHint"><span class="dash"></span> SHOT PATH</div>
+    <div class="toast" id="toast"></div>
+    <section class="shot-panel" id="shotPanel">
+      <div class="aim-copy"><span class="eyebrow">AIM YOUR SHOT <span class="keycap">A / D</span></span><span class="aim-label" id="aimLabel">CENTER</span></div>
+      <div class="aim-meter"><div class="aim-track"><span class="aim-zone left"></span><span class="aim-zone right"></span><span class="aim-tick"></span><span class="aim-knob" id="aimKnob"></span></div><div class="meter-labels"><span>LEFT</span><span>RIGHT</span></div></div>
+      <div class="shot-action"><div class="power-stack"><div class="power-label"><span>SHOT POWER</span><b id="powerText">—</b></div><div class="power-track"><div id="powerFill"></div></div></div><button id="kickBtn" class="kick-btn"><span class="kick-icon">↗</span><span><b id="kickText">HOLD TO SHOOT</b><small>SPACE / TAP & HOLD</small></span><span class="kick-arrow">→</span></button></div>
+      <div class="panel-foot"><span><b>WASD</b> AIM <i>·</i> <b>SPACE</b> CHARGE & RELEASE</span><span class="no-clock">NO CLOCK. JUST YOU.</span></div>
+    </section>
+    <div class="result-card" id="resultCard"><span class="result-kicker">THE CROWD GOES WILD</span><strong>GOAL!</strong><span class="reward-line">+<b id="reward">100</b> <span class="coin">✦</span> MATCH REWARD</span><button id="nextBtn">TAKE ANOTHER SHOT <span>→</span></button></div>
+    <button class="replay-btn" id="replayBtn">◉ &nbsp; WATCH REPLAY</button>
+    <div class="bottom-left"><span class="stadium-light"></span> NIGHTLIGHT ARENA <span class="bottom-divider">/</span> EST. 2025</div>
+    <div class="controls-tip" id="mobileTip">DRAG TO AIM <span>·</span> HOLD TO SHOOT</div>
+    <div class="player-chip"><span class="avatar-mini">✦</span><div><b id="playerName">MIRA</b><small>YOUR PLAYER</small></div><button id="playerBtn" title="Customize player">⌄</button></div>
+    <div class="modal-backdrop" id="shopModal">
+      <section class="shop-modal"><button class="close-modal" data-close>×</button><div class="eyebrow"><i></i> THE LOCKER ROOM</div><h2>Make it <em>yours.</em></h2><p class="shop-intro">Crack a crate. Find your next signature look.</p><div class="crate-card"><div class="crate-art"><div class="crate-glow"></div><div class="crate-box">✦</div><span>PLAYER DROP</span></div><div class="crate-info"><div class="rarity">✦ &nbsp; PLAYER / BALL / TRAIL</div><h3>Stadium crate</h3><p>A fresh look, a new ball, or a luminous trail. Every drop is a surprise.</p><button id="crateBtn">OPEN CRATE <span>✦ 150</span></button></div></div><div class="inventory"><div class="inventory-head">YOUR COLLECTION <span id="collectionCount">1 ITEM</span></div><div class="collection-grid" id="collectionGrid"></div></div><div class="shop-note">Progress is saved on this device.</div></section>
+      </div>
+    </section>
+    <div class="toast" id="toast"></div>
+    <div class="mobile-controls"><button id="mobileShoot" class="kick-btn">HOLD TO SHOOT&nbsp; ↗</button></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
